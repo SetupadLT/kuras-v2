@@ -533,6 +533,47 @@
                     }
                 }
             }
+        },
+        {
+            "date": "2026-09-13",
+            "fuels": {
+                "pb95": {
+                    "minimum": 1.797,
+                    "average": 1.9004226804123718,
+                    "station_count": 97,
+                    "winner": {
+                        "id": "f8358f2ae19aa7c3",
+                        "brand": "Stateta",
+                        "address": "Alytaus k., 64464",
+                        "city": "Alytaus k.",
+                        "price": 1.797
+                    }
+                },
+                "diesel": {
+                    "minimum": 2.089,
+                    "average": 2.1553367346938783,
+                    "station_count": 98,
+                    "winner": {
+                        "id": "6092d67fbd2f2238",
+                        "brand": "Utentra",
+                        "address": "Utena, Pramonės g. 16, 28119",
+                        "city": "Utena",
+                        "price": 2.089
+                    }
+                },
+                "lpg": {
+                    "minimum": 0.68,
+                    "average": 0.7757812500000004,
+                    "station_count": 96,
+                    "winner": {
+                        "id": "d876b18296771d18",
+                        "brand": "Bonsa",
+                        "address": "Taurai, Tilžės pl. 46, 72142",
+                        "city": "Taurai",
+                        "price": 0.68
+                    }
+                }
+            }
         }
     ]
 }
