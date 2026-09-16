@@ -7,7 +7,7 @@
   <title>Degalų kainos Lietuvoje | Pricer.lt</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynQJqRFYRoqaFhFVnK7Hc3fqw6kM=" crossorigin="">
-  <link rel="stylesheet" href="assets/app.css?v=20260910-1">
+  <link rel="stylesheet" href="assets/app.css?v=20260916-1">
   <link rel="stylesheet" href="assets/embed.css?v=20260910-1">
 </head>
 <body>
@@ -77,23 +77,24 @@
       <section class="app-section" data-app-section="stations" id="degalines" hidden>
         <header class="page-heading">
           <div><p class="eyebrow">Kainų sąrašas</p><h1>Degalinės Lietuvoje</h1><p>Filtruokite kainas ir pirmiausia matykite degalines, kurios pateikė pasirinktų degalų kainą.</p></div>
-          <button class="location" data-locate data-locate-view="stations" type="button">Naudoti mano vietą</button>
         </header>
 
-        <form class="filters" data-filters>
-          <label class="search"><span>Paieška</span><input data-search type="search" placeholder="Adresas, degalinė ar tinklas"></label>
-          <label><span>Miestas / gyvenvietė</span><input data-city list="city-options" type="search" autocomplete="off" placeholder="Visa Lietuva"></label>
-          <label><span>Tinklas</span><select data-brand><option value="">Visi tinklai</option></select></label>
-          <label><span>Rūšiavimas</span><select data-sort><option value="price-asc">Pigiausi pirmiausia</option><option value="price-desc">Brangiausi pirmiausia</option><option value="name">Pagal pavadinimą</option><option value="distance" disabled>Pagal atstumą</option></select></label>
-          <button class="primary" type="submit">Rodyti kainas</button>
-        </form>
-        <datalist id="city-options" data-city-options></datalist>
-        <div class="active-filter-row"><div class="fuel-tabs compact" data-station-fuels role="tablist" aria-label="Degalų rūšis"></div><button class="map-link" data-open-section="map" type="button">Rodyti žemėlapyje <span aria-hidden="true">→</span></button></div>
-
-        <section class="nearby-bar" data-nearby-bar aria-labelledby="nearby-title">
-          <div><p class="eyebrow">Pagal jūsų vietą</p><strong id="nearby-title">Raskite artimiausias degalines</strong><span>Vietą naudojame tik atstumui apskaičiuoti ir jos neišsaugome.</span></div>
-          <button class="location" data-locate data-locate-view="stations" type="button">Naudoti mano vietą</button>
+        <section class="station-filter-panel" aria-label="Degalinių filtrai">
+          <div class="location-inline">
+            <div><span class="location-icon" aria-hidden="true">⌖</span><p><strong>Pirmiausia – kas arčiausiai?</strong><small>Vieta naudojama tik atstumui apskaičiuoti ir nėra išsaugoma.</small></p></div>
+            <button class="location" data-locate data-locate-view="stations" type="button">Naudoti mano vietą</button>
+          </div>
+          <div class="fuel-filter-line"><span>Degalų rūšis</span><div class="fuel-tabs compact" data-station-fuels role="tablist" aria-label="Degalų rūšis"></div></div>
+          <form class="filters" data-filters>
+            <label class="search"><span>Paieška</span><input data-search type="search" placeholder="Adresas, degalinė ar tinklas"></label>
+            <label><span>Miestas / gyvenvietė</span><input data-city list="city-options" type="search" autocomplete="off" placeholder="Visa Lietuva"></label>
+            <label><span>Tinklas</span><select data-brand><option value="">Visi tinklai</option></select></label>
+            <label><span>Rūšiavimas</span><select data-sort><option value="price-asc">Pigiausi pirmiausia</option><option value="price-desc">Brangiausi pirmiausia</option><option value="name">Pagal pavadinimą</option><option value="distance" disabled>Pagal atstumą</option></select></label>
+            <button class="primary" type="submit">Atnaujinti</button>
+          </form>
+          <div class="filter-feedback"><div data-active-filters aria-live="polite"></div><button class="map-link" data-open-section="map" type="button">Rodyti žemėlapyje <span aria-hidden="true">→</span></button></div>
         </section>
+        <datalist id="city-options" data-city-options></datalist>
 
         <section class="top"><header class="section-head"><div><p class="eyebrow" data-top-kicker>Pigiausi pagal pasirinktus filtrus</p><h2 data-top-title>Degalinių TOP 3</h2></div><strong data-top-fuel>—</strong></header><div class="top-grid" data-top></div></section>
 
@@ -115,7 +116,7 @@
               <div class="map-legend" data-map-legend aria-label="Kainų spalvos"><span><i class="legend-price cheap"></i>Pigesnė už vidurkį</span><span><i class="legend-price average"></i>Artima vidurkiui</span><span><i class="legend-price expensive"></i>Brangesnė už vidurkį</span><span><i class="legend-price unavailable"></i>Kaina nepateikta</span></div>
               <div class="map-top"><strong>TOP 5 žemėlapyje</strong><ol data-map-top></ol></div>
             </aside>
-            <div class="map-canvas"><p class="consent">Spauskite kainą žemėlapyje arba pasirinkite degalinę iš TOP 5.</p><div class="map" data-map></div><p class="map-note" data-map-note>Žemėlapis kraunamas…</p></div>
+            <div class="map-canvas"><p class="consent">Užveskite žymeklį greitai peržiūrai, o paspauskite – visoms degalų kainoms ir maršrutui.</p><div class="map" data-map></div><p class="map-note" data-map-note>Žemėlapis kraunamas…</p></div>
           </div>
         </section>
       </section>
@@ -123,7 +124,19 @@
       <section class="app-section" data-app-section="rankings" id="reitingai" hidden>
         <header class="page-heading"><div><p class="eyebrow">Kainų analizė</p><h1>Reitingai ir kainų istorija</h1><p>Miesto lyderiai ir mažiausių kainų pokytis pagal pasirinktą degalų rūšį.</p></div><div class="fuel-tabs compact" data-ranking-fuels role="tablist" aria-label="Degalų rūšis"></div></header>
         <section class="ranking-section" aria-labelledby="cities-title"><header class="section-head"><div><p class="eyebrow">Didžiųjų miestų palyginimas</p><h2 id="cities-title">Pigiausia kiekviename mieste</h2></div><span>Pasirinkite miestą ir peržiūrėkite visas degalines</span></header><div class="city-grid" data-city-ranking></div></section>
-        <section class="history-section" aria-labelledby="history-title"><header class="section-head"><div><p class="eyebrow">Kainų istorija</p><h2 id="history-title">Geriausios kainos pagal laikotarpį</h2></div><span data-history-fuel>—</span></header><div class="period-grid" data-period-ranking></div><div class="trend-card"><div><strong>30 dienų mažiausios kainos tendencija</strong><span data-trend-summary>Istorija pradedama kaupti…</span></div><div class="trend-chart" data-trend-chart aria-label="30 dienų kainų tendencija"></div></div></section>
+        <section class="history-section" aria-labelledby="history-title">
+          <header class="section-head"><div><p class="eyebrow">Kainų istorija</p><h2 id="history-title">Kainų pokytis pagal laikotarpį</h2><p>Pasirinkite laikotarpį ir, jei reikia, susiaurinkite duomenis iki savivaldybės, tinklo ar konkrečios degalinės.</p></div><span data-history-fuel>—</span></header>
+          <form class="history-filters" data-history-filters>
+            <label><span>Laikotarpis</span><select data-history-period><option value="7">7 dienos</option><option value="30" selected>30 dienų</option><option value="90">90 dienų</option><option value="all">Visa istorija</option></select></label>
+            <label><span>Savivaldybė</span><select data-history-municipality><option value="">Visos savivaldybės</option></select></label>
+            <label><span>Tinklas</span><select data-history-brand><option value="">Visi tinklai</option></select></label>
+            <label><span>Degalinė</span><select data-history-station><option value="">Visos degalinės</option></select></label>
+            <button class="secondary" data-history-clear type="button">Išvalyti</button>
+          </form>
+          <p class="history-scope" data-history-scope aria-live="polite"></p>
+          <div class="history-summary" data-history-summary></div>
+          <div class="trend-card history-chart-card"><div><strong data-history-chart-title>Kainų tendencija</strong><span data-trend-summary>Istorija pradedama kaupti…</span><div class="chart-legend"><span><i class="min"></i>Mažiausia</span><span><i class="avg"></i>Vidutinė</span><span><i class="max"></i>Didžiausia</span></div></div><div class="trend-chart" data-trend-chart aria-label="Kainų tendencija"></div></div>
+        </section>
         <section class="alert-card" aria-labelledby="alert-title"><div><p class="eyebrow">Kainos perspėjimas</p><h2 id="alert-title">Praneškite, kai kaina nukris</h2><p>Pasirinkite degalų rūšį ir tikslinę kainą. Perspėjimas saugomas tik šiame įrenginyje.</p></div><form data-alert-form><label><span>Degalų rūšis</span><select data-alert-fuel></select></label><label><span>Tikslinė kaina €/l</span><input data-alert-price type="number" min="0.5" max="4" step="0.001" placeholder="1,650"></label><button type="submit">Išsaugoti</button></form><p class="alert-status" data-alert-status hidden></p></section>
       </section>
 
@@ -132,6 +145,6 @@
   </main>
   <footer><div class="shell">Kuro kainų palyginimas · Pricer.lt</div></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js'"></script>
-  <script src="assets/app.js?v=20260910-2" defer></script>
+  <script src="assets/app.js?v=20260916-1" defer></script>
 </body>
 </html>

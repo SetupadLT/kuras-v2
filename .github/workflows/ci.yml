@@ -65,10 +65,12 @@ jobs:
           test -s dist/data/status.json
           test -s dist/data/import-report.json
           test -s var/import-artifact/import-report.json
-          grep -q 'data-nearby-bar' dist/index.html
+          grep -q 'data-active-filters' dist/index.html
           grep -q 'data-coordinate-coverage' dist/index.html
           grep -q 'data-map-legend' dist/index.html
+          grep -q 'data-history-summary' dist/index.html
           grep -q 'data-station-id' static/assets/app.js
+          grep -q 'stationFuelRows' static/assets/app.js
           grep -q 'mapsSearchUrl' static/assets/app.js
           grep -q 'data/status.json' static/assets/app.js
           grep -q 'oficialų LEA kainų portalą' dist/index.html
