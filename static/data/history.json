@@ -656,6 +656,47 @@
                     }
                 }
             }
+        },
+        {
+            "date": "2026-09-16",
+            "fuels": {
+                "pb95": {
+                    "minimum": 1.828,
+                    "average": 1.9508337874659407,
+                    "station_count": 734,
+                    "winner": {
+                        "id": "3ce20acb70578cf9",
+                        "brand": "Autograndas",
+                        "address": "Visaginas, Taikos pr. 47, 31217",
+                        "city": "Visaginas",
+                        "price": 1.828
+                    }
+                },
+                "diesel": {
+                    "minimum": 1.999,
+                    "average": 2.2272065217391344,
+                    "station_count": 736,
+                    "winner": {
+                        "id": "4e85eff11823b4ae",
+                        "brand": "Neste Kalvarijos 1",
+                        "address": "Salaperaugio k., Europos g. 1, 69286",
+                        "city": "Salaperaugio k.",
+                        "price": 1.999
+                    }
+                },
+                "lpg": {
+                    "minimum": 0.69,
+                    "average": 0.8177744107744097,
+                    "station_count": 594,
+                    "winner": {
+                        "id": "d876b18296771d18",
+                        "brand": "Bonsa",
+                        "address": "Taurai, Tilžės pl. 46, 72142",
+                        "city": "Taurai",
+                        "price": 0.69
+                    }
+                }
+            }
         }
     ]
 }
