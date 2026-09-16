@@ -9,16 +9,41 @@ final class StaticHistoryBuilder
     /**
      * @param array<string,mixed> $previous
      * @param array<string,mixed> $current
-     * @return array{schema_version:int,days:list<array<string,mixed>>}
+     * @return array{schema_version:int,stations:array<string,array<string,string>>,days:list<array<string,mixed>>}
      */
-    public function update(array $previous, array $current, int $keepDays = 30): array
+    public function update(array $previous, array $current, int $keepDays = 90): array
     {
         $date = (string) ($current['source']['source_date'] ?? '');
         if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
             throw new \InvalidArgumentException('Kainų istorijai trūksta tinkamos šaltinio datos.');
         }
 
-        $day = ['date' => $date, 'fuels' => []];
+        $day = ['date' => $date, 'fuels' => [], 'station_prices' => []];
+        $stationCatalog = is_array($previous['stations'] ?? null) ? $previous['stations'] : [];
+        foreach ((array) ($current['stations'] ?? []) as $station) {
+            $stationId = (string) ($station['id'] ?? '');
+            if ($stationId === '') {
+                continue;
+            }
+
+            $stationCatalog[$stationId] = [
+                'brand' => (string) ($station['brand'] ?? ''),
+                'address' => (string) ($station['address'] ?? ''),
+                'city' => (string) ($station['city'] ?? ''),
+                'municipality' => (string) ($station['municipality'] ?? ''),
+            ];
+
+            $prices = [];
+            foreach ((array) ($station['prices'] ?? []) as $fuel => $price) {
+                if (is_numeric($price)) {
+                    $prices[(string) $fuel] = (float) $price;
+                }
+            }
+            if ($prices !== []) {
+                $day['station_prices'][$stationId] = $prices;
+            }
+        }
+
         foreach ((array) ($current['summary']['fuels'] ?? []) as $fuel) {
             $priced = array_values(array_filter(
                 (array) ($current['stations'] ?? []),
@@ -33,6 +58,7 @@ final class StaticHistoryBuilder
             $day['fuels'][$fuel] = [
                 'minimum' => min($prices),
                 'average' => array_sum($prices) / count($prices),
+                'maximum' => max($prices),
                 'station_count' => count($prices),
                 'winner' => [
                     'id' => (string) ($winner['id'] ?? ''),
@@ -54,7 +80,8 @@ final class StaticHistoryBuilder
         ksort($days);
 
         return [
-            'schema_version' => 1,
+            'schema_version' => 2,
+            'stations' => $stationCatalog,
             'days' => array_values(array_slice($days, -$keepDays, null, true)),
         ];
     }
