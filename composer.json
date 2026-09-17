@@ -21,6 +21,7 @@
             "@php -r '$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(\"src\")); foreach ($files as $file) { if ($file->getExtension() === \"php\") { passthru(\"php -l \" . escapeshellarg($file->getPathname()), $code); if ($code !== 0) exit($code); }}'",
             "@php -l bin/import.php",
             "@php -l bin/build-static.php",
+            "@php -l bin/build-market-data.php",
             "@test"
         ]
     },
