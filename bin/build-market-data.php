@@ -107,7 +107,8 @@ function http_get(string $url): string
         throw new RuntimeException('Rinkos duomenims būtinas PHP cURL plėtinys.');
     }
     $lastError = 'nežinoma tinklo klaida';
-    for ($attempt = 1; $attempt <= 3; ++$attempt) {
+    $attempts = 5;
+    for ($attempt = 1; $attempt <= $attempts; ++$attempt) {
         $handle = curl_init($url);
         if ($handle === false) {
             throw new RuntimeException('Nepavyko paleisti rinkos duomenų užklausos.');
@@ -118,7 +119,7 @@ function http_get(string $url): string
             CURLOPT_MAXREDIRS => 5,
             CURLOPT_CONNECTTIMEOUT => 20,
             CURLOPT_TIMEOUT => 90,
-            CURLOPT_USERAGENT => 'KurasPricerBot/1.0 (+https://kuras.pricer.lt)',
+            CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; KurasPricerBot/1.0; +https://kuras.pricer.lt)',
             CURLOPT_HTTPHEADER => ['Accept: text/html,application/xhtml+xml;q=0.9,*/*;q=0.7'],
             CURLOPT_ENCODING => '',
             CURLOPT_SSL_VERIFYPEER => true,
@@ -134,8 +135,8 @@ function http_get(string $url): string
             return $body;
         }
         $lastError = $error !== '' ? $error : "HTTP {$status}";
-        if ($attempt < 3 && ($status === 0 || $status === 408 || $status === 429 || $status >= 500)) {
-            usleep(500000 * $attempt);
+        if ($attempt < $attempts && ($status === 0 || $status === 408 || $status === 429 || $status >= 500)) {
+            sleep(min(8, 2 ** ($attempt - 1)));
             continue;
         }
         break;
