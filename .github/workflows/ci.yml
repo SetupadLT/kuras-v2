@@ -56,12 +56,15 @@ jobs:
         run: php bin/build-static.php --file=tests/Fixtures/lea_prices_valid.xlsx --source-date=2026-07-17 --fixture --output=dist --archive-output=var/import-artifact
       - name: Build from the sanitized live LEA API fixture
         run: php bin/build-static.php --file=tests/Fixtures/lea_live_api.json --source-date=2026-07-30 --fixture --output=dist-api --archive-output=var/api-import-artifact
+      - name: Build official market context from sanitized fixtures
+        run: php bin/build-market-data.php --orlen-file=tests/Fixtures/orlen_market_prices.html --brent-file=tests/Fixtures/eia_brent_prices.html --output=dist/data/market.json
       - name: Verify generated public files
         run: |
           test -s dist/index.html
           test -s dist/data/current.json
           test -s dist/data/current.js
           test -s dist/data/history.json
+          test -s dist/data/market.json
           test -s dist/data/status.json
           test -s dist/data/import-report.json
           test -s var/import-artifact/import-report.json
@@ -69,6 +72,8 @@ jobs:
           grep -q 'data-coordinate-coverage' dist/index.html
           grep -q 'data-map-legend' dist/index.html
           grep -q 'data-history-summary' dist/index.html
+          grep -q 'data-market-context' dist/index.html
+          grep -q '"source_name": "ORLEN Lietuva"' dist/data/market.json
           grep -q 'data-station-id' static/assets/app.js
           grep -q 'stationFuelRows' static/assets/app.js
           grep -q 'mapsSearchUrl' static/assets/app.js
