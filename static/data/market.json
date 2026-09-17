@@ -1,27 +1,251 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-09-16T12:00:00Z",
-  "orlen": {
-    "source_name": "ORLEN Lietuva",
-    "source_url": "https://www.orlenlietuva.lt/en/wholesale/_layouts/f2hCharts/default_lt_M.aspx",
-    "description": "Vienkartinių sandorių kainos, kraunant į autotransportą OKSETA terminale Kaune.",
-    "unit": "EUR/l",
-    "series": {
-      "pb95": [
-        {"date":"2026-08-24","value":1.669},{"date":"2026-08-25","value":1.649},{"date":"2026-08-26","value":1.661},{"date":"2026-08-27","value":1.655},{"date":"2026-08-28","value":1.683},{"date":"2026-08-31","value":1.717},{"date":"2026-09-01","value":1.719},{"date":"2026-09-02","value":1.741},{"date":"2026-09-03","value":1.802},{"date":"2026-09-04","value":1.815},{"date":"2026-09-07","value":1.796},{"date":"2026-09-08","value":1.777},{"date":"2026-09-09","value":1.766},{"date":"2026-09-10","value":1.730},{"date":"2026-09-11","value":1.744},{"date":"2026-09-14","value":1.791},{"date":"2026-09-15","value":1.836}
-      ],
-      "diesel": [
-        {"date":"2026-08-24","value":1.969},{"date":"2026-08-25","value":1.911},{"date":"2026-08-26","value":1.911},{"date":"2026-08-27","value":1.898},{"date":"2026-08-28","value":1.870},{"date":"2026-08-31","value":1.913},{"date":"2026-09-01","value":1.916},{"date":"2026-09-02","value":2.032},{"date":"2026-09-03","value":2.052},{"date":"2026-09-04","value":2.046},{"date":"2026-09-07","value":2.034},{"date":"2026-09-08","value":2.061},{"date":"2026-09-09","value":2.041},{"date":"2026-09-10","value":2.069},{"date":"2026-09-11","value":2.128},{"date":"2026-09-14","value":2.130},{"date":"2026-09-15","value":2.133}
-      ]
-    }
-  },
-  "brent": {
-    "source_name": "U.S. Energy Information Administration",
-    "source_url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
-    "description": "Europe Brent Spot Price FOB.",
-    "unit": "USD/bbl",
-    "series": [
-      {"date":"2026-08-24","value":92.71},{"date":"2026-08-25","value":88.24},{"date":"2026-08-26","value":87.77},{"date":"2026-08-27","value":90.18},{"date":"2026-08-28","value":89.75},{"date":"2026-09-01","value":96.02},{"date":"2026-09-02","value":97.59},{"date":"2026-09-03","value":100.52},{"date":"2026-09-04","value":102.24},{"date":"2026-09-07","value":104.47},{"date":"2026-09-08","value":106.12},{"date":"2026-09-09","value":109.51}
+    "schema_version": 1,
+    "generated_at": "2026-09-17T14:22:26+00:00",
+    "orlen": {
+        "source_name": "ORLEN Lietuva",
+        "source_url": "https://www.orlenlietuva.lt/en/wholesale/_layouts/f2hCharts/default_lt_M.aspx",
+        "description": "Vienkartinių sandorių kainos, kraunant į autotransportą OKSETA terminale Kaune.",
+        "unit": "EUR/l",
+        "series": {
+            "pb95": [
+                {
+                    "date": "2026-08-18",
+                    "value": 1.622
+                },
+                {
+                    "date": "2026-08-19",
+                    "value": 1.64
+                },
+                {
+                    "date": "2026-08-20",
+                    "value": 1.654
+                },
+                {
+                    "date": "2026-08-21",
+                    "value": 1.655
+                },
+                {
+                    "date": "2026-08-24",
+                    "value": 1.669
+                },
+                {
+                    "date": "2026-08-25",
+                    "value": 1.649
+                },
+                {
+                    "date": "2026-08-26",
+                    "value": 1.661
+                },
+                {
+                    "date": "2026-08-27",
+                    "value": 1.655
+                },
+                {
+                    "date": "2026-08-28",
+                    "value": 1.683
+                },
+                {
+                    "date": "2026-08-31",
+                    "value": 1.717
+                },
+                {
+                    "date": "2026-09-01",
+                    "value": 1.719
+                },
+                {
+                    "date": "2026-09-02",
+                    "value": 1.741
+                },
+                {
+                    "date": "2026-09-03",
+                    "value": 1.802
+                },
+                {
+                    "date": "2026-09-04",
+                    "value": 1.815
+                },
+                {
+                    "date": "2026-09-07",
+                    "value": 1.796
+                },
+                {
+                    "date": "2026-09-08",
+                    "value": 1.777
+                },
+                {
+                    "date": "2026-09-09",
+                    "value": 1.766
+                },
+                {
+                    "date": "2026-09-10",
+                    "value": 1.73
+                },
+                {
+                    "date": "2026-09-11",
+                    "value": 1.744
+                },
+                {
+                    "date": "2026-09-14",
+                    "value": 1.791
+                },
+                {
+                    "date": "2026-09-15",
+                    "value": 1.836
+                },
+                {
+                    "date": "2026-09-16",
+                    "value": 1.836
+                }
+            ],
+            "diesel": [
+                {
+                    "date": "2026-08-18",
+                    "value": 1.951
+                },
+                {
+                    "date": "2026-08-19",
+                    "value": 1.967
+                },
+                {
+                    "date": "2026-08-20",
+                    "value": 1.967
+                },
+                {
+                    "date": "2026-08-21",
+                    "value": 1.966
+                },
+                {
+                    "date": "2026-08-24",
+                    "value": 1.969
+                },
+                {
+                    "date": "2026-08-25",
+                    "value": 1.911
+                },
+                {
+                    "date": "2026-08-26",
+                    "value": 1.911
+                },
+                {
+                    "date": "2026-08-27",
+                    "value": 1.898
+                },
+                {
+                    "date": "2026-08-28",
+                    "value": 1.87
+                },
+                {
+                    "date": "2026-08-31",
+                    "value": 1.913
+                },
+                {
+                    "date": "2026-09-01",
+                    "value": 1.916
+                },
+                {
+                    "date": "2026-09-02",
+                    "value": 2.032
+                },
+                {
+                    "date": "2026-09-03",
+                    "value": 2.052
+                },
+                {
+                    "date": "2026-09-04",
+                    "value": 2.046
+                },
+                {
+                    "date": "2026-09-07",
+                    "value": 2.034
+                },
+                {
+                    "date": "2026-09-08",
+                    "value": 2.061
+                },
+                {
+                    "date": "2026-09-09",
+                    "value": 2.041
+                },
+                {
+                    "date": "2026-09-10",
+                    "value": 2.069
+                },
+                {
+                    "date": "2026-09-11",
+                    "value": 2.128
+                },
+                {
+                    "date": "2026-09-14",
+                    "value": 2.13
+                },
+                {
+                    "date": "2026-09-15",
+                    "value": 2.133
+                },
+                {
+                    "date": "2026-09-16",
+                    "value": 2.209
+                }
+            ]
+        }
+    },
+    "brent": {
+        "source_name": "U.S. Energy Information Administration",
+        "source_url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
+        "description": "Europe Brent Spot Price FOB.",
+        "unit": "USD/bbl",
+        "series": [
+            {
+                "date": "2026-08-24",
+                "value": 92.71
+            },
+            {
+                "date": "2026-08-25",
+                "value": 88.24
+            },
+            {
+                "date": "2026-08-26",
+                "value": 87.77
+            },
+            {
+                "date": "2026-08-27",
+                "value": 90.18
+            },
+            {
+                "date": "2026-08-28",
+                "value": 89.75
+            },
+            {
+                "date": "2026-09-01",
+                "value": 96.02
+            },
+            {
+                "date": "2026-09-02",
+                "value": 97.59
+            },
+            {
+                "date": "2026-09-03",
+                "value": 100.52
+            },
+            {
+                "date": "2026-09-04",
+                "value": 102.24
+            },
+            {
+                "date": "2026-09-07",
+                "value": 104.47
+            },
+            {
+                "date": "2026-09-08",
+                "value": 106.12
+            },
+            {
+                "date": "2026-09-09",
+                "value": 109.51
+            }
+        ]
+    },
+    "warnings": [
+        "Brent: EIA šaltinyje nerasta pakankamai Brent kainų."
     ]
-  }
 }

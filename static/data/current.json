@@ -5,8 +5,8 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-09-17",
-        "generated_at": "2026-09-17T10:25:55+00:00",
-        "checksum_sha256": "ac5beda03d44070a85886a2d4796f1685be471f3a3545d2cf595875d5d6d9bd5",
+        "generated_at": "2026-09-17T14:22:24+00:00",
+        "checksum_sha256": "0321b5f854f9c9fd4f86afff2db79862344e0978860cf985d0145ca5a3cbd60f",
         "parser_version": "lea-live-api-v1",
         "source_updated_at": "2026-09-17T11:03:09+03:00"
     },
