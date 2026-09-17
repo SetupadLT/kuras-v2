@@ -79,7 +79,8 @@ final class OfficialMarketDataParser
             if ($cells === false || $cells->length < 6) {
                 continue;
             }
-            $week = preg_replace('/\s+/', ' ', trim((string) $cells->item(0)?->textContent));
+            $weekText = str_replace("\xC2\xA0", ' ', (string) $cells->item(0)?->textContent);
+            $week = preg_replace('/\s+/', ' ', trim($weekText));
             if (!is_string($week) || !preg_match('/^(\d{4}) ([A-Z][a-z]{2})-\s*(\d{1,2}) to /', $week, $matches)) {
                 continue;
             }
