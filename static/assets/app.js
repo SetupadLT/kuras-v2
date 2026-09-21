@@ -156,6 +156,31 @@
     select.innerHTML='<option value="">Visos degalinės</option>'+stations.map(station=>`<option value="${escapeHtml(String(station.id))}">${escapeHtml(station.brand)} — ${escapeHtml(station.city||station.municipality||station.address)}</option>`).join('');
     select.value=stations.some(station=>String(station.id)===selected)?selected:'';
   }
+  function renderRankingLeaders(){
+    const list=$('[data-ranking-leaders]');
+    if(!list||!state.data)return;
+    const municipality=value('[data-history-municipality]');
+    const brand=value('[data-history-brand]');
+    const stationId=value('[data-history-station]');
+    const stations=state.data.stations
+      .filter(station=>!municipality||station.municipality===municipality)
+      .filter(station=>!brand||station.brand===brand)
+      .filter(station=>!stationId||String(station.id)===stationId)
+      .filter(station=>priceValue(station)!=null)
+      .sort(comparePrices)
+      .slice(0,5);
+    list.innerHTML=stations.map((station,index)=>{
+      const location=[station.address,station.city].filter(Boolean).join(', ');
+      const status=priceStatus(station);
+      return `<li><button type="button" data-ranking-station-id="${escapeHtml(String(station.id))}"><span class="leader-rank">${index+1}</span><span class="leader-station"><strong>${escapeHtml(station.brand||station.name)}</strong><small>${escapeHtml(location||station.municipality||'Vieta nenurodyta')}</small></span><span class="leader-price">${euro(priceValue(station))}<small>${escapeHtml(status.label||'už litrą')}</small></span></button></li>`;
+    }).join('')||'<li class="ranking-leaders-empty">Pagal pasirinktus filtrus kainų nerasta.</li>';
+    $$('[data-ranking-station-id]').forEach(button=>button.onclick=()=>selectStation(button.dataset.rankingStationId));
+    const sourceDate=state.data?.source?.source_date;
+    const checkedAt=state.checkedAt||state.data?.generated_at;
+    $('[data-ranking-freshness]').textContent=sourceDate
+      ?`LEA kainos: ${calendarDate(sourceDate)}${checkedAt?` · patikrinta ${localTime(checkedAt)}`:''}`
+      :'Šaltinio data tikslinama';
+  }
   function historyDayStats(day,{municipality,brand,stationId}){
     const scoped=Boolean(municipality||brand||stationId);
     if(!scoped){
@@ -182,6 +207,7 @@
     const available=(state.history?.days||[]).filter(day=>day?.fuels?.[state.fuel]);
     const selectedDays=period==='all'?available:available.slice(-Number(period||30));
     const points=selectedDays.map(day=>({date:day.date,...historyDayStats(day,filters)})).filter(point=>Number.isFinite(point.minimum)&&Number.isFinite(point.average));
+    renderRankingLeaders();
     $('[data-history-fuel]').textContent=fuelLabels[state.fuel];
     $('[data-history-chart-title]').textContent=`${fuelLabels[state.fuel]} kainų tendencija`;
     const scopeParts=[filters.municipality,filters.brand];
@@ -410,5 +436,6 @@
   $$('[data-history-municipality],[data-history-brand]').forEach(select=>select.addEventListener('change',()=>{updateHistoryStationOptions();renderHistory();scheduleHeight();}));
   $$('[data-history-period],[data-history-station]').forEach(select=>select.addEventListener('change',()=>{renderHistory();scheduleHeight();}));
   $('[data-history-clear]').onclick=()=>{$('[data-history-municipality]').value='';$('[data-history-brand]').value='';$('[data-history-station]').value='';updateHistoryStationOptions();renderHistory();};
+  $('[data-ranking-show-all]').onclick=()=>{$('[data-city]').value=value('[data-history-municipality]');$('[data-brand]').value=value('[data-history-brand]');$('[data-search]').value='';state.page=1;renderAll();setSection('stations');};
   $('[data-prev]').onclick=()=>{state.page--;renderTable(fuelStations());};$('[data-next]').onclick=()=>{state.page++;renderTable(fuelStations());};$$('[data-locate]').forEach(button=>button.onclick=()=>locate(button.dataset.locateView||'stations'));$$('[data-section-target]').forEach(button=>button.onclick=()=>setSection(button.dataset.sectionTarget));$$('[data-open-section]').forEach(button=>button.onclick=()=>setSection(button.dataset.openSection));$('[data-home-city-submit]').onclick=applyHomeCity;$('[data-home-city]').onkeydown=event=>{if(event.key==='Enter'){event.preventDefault();applyHomeCity();}};start();
 })();
