@@ -320,7 +320,8 @@
   }
   function syncMap(resetToLithuania=false,redrawTiles=false){if(!state.map)return;if(state.mapResizeFrame)cancelAnimationFrame(state.mapResizeFrame);state.mapResizeFrame=requestAnimationFrame(()=>{state.map.invalidateSize({animate:false,pan:false});if(resetToLithuania&&state.lat==null)state.map.fitBounds(lithuaniaBounds,{padding:[12,12]});if(redrawTiles&&state.tileLayer)state.tileLayer.redraw();});}
   function addTileLayer(url){const layer=L.tileLayer(url,{minZoom:6,maxZoom:18,keepBuffer:3,updateWhenIdle:false,crossOrigin:true,attribution:'© OpenStreetMap contributors'});layer.on('tileerror',()=>{state.tileFailures++;if(state.tileFailures<3||state.usingFallbackTiles)return;state.usingFallbackTiles=true;state.tileFailures=0;state.map.removeLayer(layer);state.tileLayer=addTileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png');setTimeout(()=>syncMap(true,true),80);});layer.addTo(state.map);return layer;}
-  function initMap(){if(state.map||!window.L)return;const node=$('[data-map]');if(!node||node.offsetWidth===0||node.offsetHeight===0)return;state.map=L.map(node,{minZoom:6,preferCanvas:true}).setView([55.17,23.88],7);state.tileLayer=addTileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png');state.markers=L.layerGroup().addTo(state.map);state.userLayers=L.layerGroup().addTo(state.map);if('ResizeObserver' in window){state.mapResizeObserver=new ResizeObserver(()=>syncMap(state.lat==null));state.mapResizeObserver.observe(node);}window.addEventListener('resize',()=>syncMap(state.lat==null));syncMap(true);[150,500,1200].forEach((delay,index)=>setTimeout(()=>syncMap(true,index===2),delay));}
+  function updateMapMarkerDetail(){const node=$('[data-map]');if(!node||!state.map)return;const zoom=state.map.getZoom();node.classList.toggle('is-price-zoom',zoom>=12);node.classList.toggle('is-station-zoom',zoom>=14);}
+  function initMap(){if(state.map||!window.L)return;const node=$('[data-map]');if(!node||node.offsetWidth===0||node.offsetHeight===0)return;state.map=L.map(node,{minZoom:6,preferCanvas:true}).setView([55.17,23.88],7);state.tileLayer=addTileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png');state.markers=L.layerGroup().addTo(state.map);state.userLayers=L.layerGroup().addTo(state.map);state.map.on('zoomend',updateMapMarkerDetail);updateMapMarkerDetail();if('ResizeObserver' in window){state.mapResizeObserver=new ResizeObserver(()=>syncMap(state.lat==null));state.mapResizeObserver.observe(node);}window.addEventListener('resize',()=>syncMap(state.lat==null));syncMap(true);[150,500,1200].forEach((delay,index)=>setTimeout(()=>syncMap(true,index===2),delay));}
   function stationFuelRows(s,{compact=false}={}){
     const fuels=['pb95','diesel','lpg'].filter(fuel=>state.data?.summary?.fuels?.includes(fuel));
     return fuels.map(fuel=>{
@@ -346,20 +347,24 @@
     const mapPrices=pricedMapped.map(s=>priceValue(s));
     const mapAverage=mapPrices.length?mapPrices.reduce((sum,price)=>sum+price,0)/mapPrices.length:null;
     const priceBand=station=>{const price=priceValue(station);if(price==null||mapAverage==null)return 'unavailable';if(price<=mapAverage-.02)return 'cheap';if(price>=mapAverage+.02)return 'expensive';return 'average';};
-    const emphasized=new Set((state.lat!=null?pricedMapped.slice(0,10):[...pricedMapped].sort(comparePrices).slice(0,12)).map(s=>String(s.id)));
     mapped.forEach(s=>{
       const id=String(s.id);
       const selected=id===state.selectedStationId;
       const popup=popupHtml(s);
       const popupOptions={minWidth:285,maxWidth:320,offset:[0,-5],autoPanPaddingTopLeft:[58,20],autoPanPaddingBottomRight:[20,20]};
-      let marker;
-      if(emphasized.has(id)||selected){
-        const missing=priceValue(s)==null,markerClass=selected?'selected':priceBand(s);
-        marker=L.marker([Number(s.latitude),Number(s.longitude)],{icon:L.divIcon({className:'price-marker',html:`<span class="marker ${markerClass}">${missing?'Nepateikė':euro(priceValue(s))}</span>`,iconSize:[missing?88:76,30],iconAnchor:[missing?44:38,15]})}).bindPopup(popup,popupOptions).addTo(state.markers);
-      }else{
-        const colors={cheap:'#20ad58',average:'#e6ad00',expensive:'#df4848',unavailable:'#8b969e'};
-        marker=L.circleMarker([Number(s.latitude),Number(s.longitude)],{radius:8,color:'#fff',weight:2.5,fillColor:colors[priceBand(s)],fillOpacity:.96}).bindPopup(popup,popupOptions).addTo(state.markers);
-      }
+      const price=priceValue(s),band=priceBand(s),stationLabel=s.brand||s.name||'Degalinė',priceLabel=price==null?'Kaina nepateikta':euro(price);
+      const marker=L.marker([Number(s.latitude),Number(s.longitude)],{
+        title:`${stationLabel} · ${priceLabel}`,
+        riseOnHover:true,
+        riseOffset:2000,
+        zIndexOffset:selected?3000:0,
+        icon:L.divIcon({
+          className:'station-map-icon',
+          html:`<span class="station-map-marker ${band}${selected?' selected':''}"><span class="station-map-dot" aria-hidden="true"></span><span class="station-map-price">${escapeHtml(price==null?'—':euro(price))}</span><span class="station-map-label"><strong>${escapeHtml(stationLabel)}</strong><b>${escapeHtml(priceLabel)}</b></span></span>`,
+          iconSize:[18,18],
+          iconAnchor:[9,9]
+        })
+      }).bindPopup(popup,popupOptions).addTo(state.markers);
       if(window.matchMedia?.('(hover: hover) and (pointer: fine)').matches){
         marker.bindTooltip(tooltipHtml(s),{direction:'top',offset:[0,-10],opacity:1,sticky:true,className:'station-map-tooltip'});
         marker.on('popupopen',()=>marker.closeTooltip());
@@ -374,7 +379,7 @@
     $('[data-map-top]').innerHTML=topMapped.map((station,index)=>`<li><button type="button" data-map-station-id="${escapeHtml(String(station.id))}"><span>${index+1}. ${escapeHtml(station.brand)}</span><b>${euro(priceValue(station))}</b><small>${escapeHtml(station.city||station.address)}${station.distance_km!=null?' · '+station.distance_km.toFixed(1)+' km':''}</small></button></li>`).join('')||'<li class="empty">Degalinių nerasta.</li>';
     $$('[data-map-station-id]').forEach(button=>button.onclick=()=>selectStation(button.dataset.mapStationId));
     const selected=mapped.find(s=>String(s.id)===state.selectedStationId);
-    $('[data-map-note]').textContent=!mapped.length?'Pasirinktų degalinių vietos žemėlapyje dar tikslinamos.':selected?`Pasirinkta: ${selected.name||selected.brand}, ${selected.address}.`:state.lat!=null?'Žemėlapis surikiuotas pagal atstumą nuo jūsų vietos.':'Rodomos filtro kriterijus atitinkančios degalinės. Paspauskite žymeklį kainoms ir maršrutui.';
+    $('[data-map-note]').textContent=!mapped.length?'Pasirinktų degalinių vietos žemėlapyje dar tikslinamos.':selected?`Pasirinkta: ${selected.name||selected.brand}, ${selected.address}.`:state.lat!=null?'Žemėlapis surikiuotas pagal atstumą nuo jūsų vietos. Priartinkite, kad matytumėte degalinių pavadinimus.':'Priartinkite žemėlapį, kad taškai pavirstų kainomis ir degalinių pavadinimais. Paspauskite visoms kainoms ir maršrutui.';
     setTimeout(()=>{
       syncMap(false);
       if(state.focusStationId){
