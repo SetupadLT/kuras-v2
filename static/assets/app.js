@@ -337,6 +337,25 @@
     const route=`https://www.google.com/maps/dir/?api=1&destination=${Number(s.latitude)},${Number(s.longitude)}`;
     return `<article class="station-popup"><span class="station-popup-label">Degalų kainos</span><strong class="station-popup-name">${escapeHtml(s.brand)}</strong><p>${escapeHtml(address)}${city}</p><div class="station-popup-prices">${stationFuelRows(s)}</div><div class="station-popup-actions">${distance}<a href="${route}" target="_blank" rel="noopener">Maršrutas <span aria-hidden="true">↗</span></a></div></article>`;
   }
+  const mapBrandIdentities=[
+    {match:/circle\s*k/i,key:'circle-k',short:'K',domain:'circlek.lt'},
+    {match:/neste/i,key:'neste',short:'N',domain:'neste.lt'},
+    {match:/orlen/i,key:'orlen',short:'O',domain:'orlen.lt'},
+    {match:/viada/i,key:'viada',short:'V',domain:'viada.lt'},
+    {match:/baltic\s*petroleum/i,key:'baltic-petroleum',short:'BP',domain:'balticpetroleum.lt'},
+    {match:/emsi/i,key:'emsi',short:'E',domain:'emsi.lt'},
+    {match:/jozita/i,key:'jozita',short:'J',domain:'jozita.lt'},
+    {match:/saurida/i,key:'saurida',short:'S',domain:'saurida.lt'},
+    {match:/trevena/i,key:'trevena',short:'T',domain:'trevena.lt'},
+    {match:/alauša/i,key:'alausa',short:'A',domain:'alausa.lt'},
+    {match:/virši/i,key:'virsi',short:'V',domain:'virsi.lt'}
+  ];
+  function stationBrandBadge(station){
+    const label=String(station.brand||station.name||'Degalinė'),identity=mapBrandIdentities.find(item=>item.match.test(label));
+    const initials=identity?.short||label.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word[0]).join('').toLocaleUpperCase('lt').slice(0,2)||'D';
+    const logo=identity?`<img src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https%3A%2F%2F${identity.domain}" alt="" loading="lazy" onerror="this.hidden=true">`:'';
+    return `<span class="station-brand-logo${identity?' brand-'+identity.key:''}" aria-hidden="true"><span>${escapeHtml(initials)}</span>${logo}</span>`;
+  }
   function renderMap(rows){
     initMap();
     if(!state.map)return;
@@ -347,6 +366,7 @@
     const mapPrices=pricedMapped.map(s=>priceValue(s));
     const mapAverage=mapPrices.length?mapPrices.reduce((sum,price)=>sum+price,0)/mapPrices.length:null;
     const priceBand=station=>{const price=priceValue(station);if(price==null||mapAverage==null)return 'unavailable';if(price<=mapAverage-.02)return 'cheap';if(price>=mapAverage+.02)return 'expensive';return 'average';};
+    const featuredIds=new Set([...pricedMapped].sort(comparePrices).slice(0,5).map(station=>String(station.id)));
     mapped.forEach(s=>{
       const id=String(s.id);
       const selected=id===state.selectedStationId;
@@ -357,10 +377,10 @@
         title:`${stationLabel} · ${priceLabel}`,
         riseOnHover:true,
         riseOffset:2000,
-        zIndexOffset:selected?3000:0,
+        zIndexOffset:selected?3000:featuredIds.has(id)?1000:0,
         icon:L.divIcon({
           className:'station-map-icon',
-          html:`<span class="station-map-marker ${band}${selected?' selected':''}"><span class="station-map-dot" aria-hidden="true"></span><span class="station-map-price">${escapeHtml(price==null?'—':euro(price))}</span><span class="station-map-label"><strong>${escapeHtml(stationLabel)}</strong><b>${escapeHtml(priceLabel)}</b></span></span>`,
+          html:`<span class="station-map-marker ${band}${selected?' selected':''}${featuredIds.has(id)?' featured':''}"><span class="station-map-dot" aria-hidden="true"></span><span class="station-map-card">${stationBrandBadge(s)}<b>${escapeHtml(price==null?'—':euro(price))}</b></span></span>`,
           iconSize:[18,18],
           iconAnchor:[9,9]
         })
@@ -375,11 +395,11 @@
       if(state.accuracy)L.circle([state.lat,state.lng],{radius:Math.min(state.accuracy,2000),color:'#326f94',weight:1,fillColor:'#326f94',fillOpacity:.08,interactive:false}).addTo(state.userLayers);
       L.circleMarker([state.lat,state.lng],{radius:9,color:'#fff',weight:3,fillColor:'#326f94',fillOpacity:1}).bindTooltip('Jūsų vieta',{permanent:true,direction:'top',offset:[0,-10]}).addTo(state.userLayers);
     }
-    const topMapped=[...pricedMapped].sort(state.lat!=null?(a,b)=>(a.distance_km??Infinity)-(b.distance_km??Infinity):comparePrices).slice(0,5);
+    const topMapped=[...pricedMapped].sort(comparePrices).slice(0,5);
     $('[data-map-top]').innerHTML=topMapped.map((station,index)=>`<li><button type="button" data-map-station-id="${escapeHtml(String(station.id))}"><span>${index+1}. ${escapeHtml(station.brand)}</span><b>${euro(priceValue(station))}</b><small>${escapeHtml(station.city||station.address)}${station.distance_km!=null?' · '+station.distance_km.toFixed(1)+' km':''}</small></button></li>`).join('')||'<li class="empty">Degalinių nerasta.</li>';
     $$('[data-map-station-id]').forEach(button=>button.onclick=()=>selectStation(button.dataset.mapStationId));
     const selected=mapped.find(s=>String(s.id)===state.selectedStationId);
-    $('[data-map-note]').textContent=!mapped.length?'Pasirinktų degalinių vietos žemėlapyje dar tikslinamos.':selected?`Pasirinkta: ${selected.name||selected.brand}, ${selected.address}.`:state.lat!=null?'Žemėlapis surikiuotas pagal atstumą nuo jūsų vietos. Priartinkite, kad matytumėte degalinių pavadinimus.':'Priartinkite žemėlapį, kad taškai pavirstų kainomis ir degalinių pavadinimais. Paspauskite visoms kainoms ir maršrutui.';
+    $('[data-map-note]').textContent=!mapped.length?'Pasirinktų degalinių vietos žemėlapyje dar tikslinamos.':selected?`Pasirinkta: ${selected.name||selected.brand}, ${selected.address}.`:'Iš toli išskirtos 5 pigiausios degalinės. Priartinkite, kad matytumėte visų tinklų ženklus ir kainas.';
     setTimeout(()=>{
       syncMap(false);
       if(state.focusStationId){
