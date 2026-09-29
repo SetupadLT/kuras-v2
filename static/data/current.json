@@ -5,10 +5,10 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-09-29",
-        "generated_at": "2026-09-29T17:01:35+00:00",
-        "checksum_sha256": "f87fc351dc4b326dc6a6ee35e3bfeab0334919dae43052aa43e6a38473afdea5",
+        "generated_at": "2026-09-29T21:23:53+00:00",
+        "checksum_sha256": "6765c2fcf5f06d9c844f4c0717c9981c879def82eda21144ca815a6cbf5a191f",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-09-29T18:01:47+03:00"
+        "source_updated_at": "2026-09-29T23:53:02+03:00"
     },
     "summary": {
         "station_count": 766,
@@ -7849,9 +7849,9 @@
                 "lpg": 0.82
             },
             "price_updated_at": {
-                "pb95": "2026-09-29T10:00:00+03:00",
-                "diesel": "2026-09-29T10:00:00+03:00",
-                "lpg": "2026-09-29T10:00:00+03:00"
+                "pb95": "2026-09-29T23:53:02+03:00",
+                "diesel": "2026-09-29T23:53:02+03:00",
+                "lpg": "2026-09-29T23:53:02+03:00"
             },
             "unavailable_fuels": []
         },
@@ -7870,9 +7870,9 @@
                 "lpg": 0.82
             },
             "price_updated_at": {
-                "pb95": "2026-09-29T10:00:00+03:00",
-                "diesel": "2026-09-29T10:00:00+03:00",
-                "lpg": "2026-09-29T10:00:00+03:00"
+                "pb95": "2026-09-29T23:53:02+03:00",
+                "diesel": "2026-09-29T23:53:02+03:00",
+                "lpg": "2026-09-29T23:53:02+03:00"
             },
             "unavailable_fuels": []
         },
@@ -7891,9 +7891,9 @@
                 "lpg": 0.82
             },
             "price_updated_at": {
-                "pb95": "2026-09-29T10:00:00+03:00",
-                "diesel": "2026-09-29T10:00:00+03:00",
-                "lpg": "2026-09-29T10:00:00+03:00"
+                "pb95": "2026-09-29T23:53:02+03:00",
+                "diesel": "2026-09-29T23:53:02+03:00",
+                "lpg": "2026-09-29T23:53:02+03:00"
             },
             "unavailable_fuels": []
         },
