@@ -46582,9 +46582,9 @@
             "fuels": {
                 "pb95": {
                     "minimum": 1.785,
-                    "average": 1.964302068965517,
+                    "average": 1.9641721763085396,
                     "maximum": 2.079,
-                    "station_count": 725,
+                    "station_count": 726,
                     "winner": {
                         "id": "7a26ac48b6290710",
                         "brand": "Alauša",
@@ -46595,9 +46595,9 @@
                 },
                 "diesel": {
                     "minimum": 2.165,
-                    "average": 2.2685680880329957,
+                    "average": 2.2684271978021817,
                     "maximum": 2.379,
-                    "station_count": 727,
+                    "station_count": 728,
                     "winner": {
                         "id": "7a26ac48b6290710",
                         "brand": "Alauša",
@@ -46850,7 +46850,7 @@
                 },
                 "3ce20acb70578cf9": {
                     "pb95": 1.932,
-                    "diesel": 2.232
+                    "diesel": 2.218
                 },
                 "6e4c6d9bbfaa9412": {
                     "pb95": 1.899,
@@ -49040,8 +49040,8 @@
                     "lpg": 0.885
                 },
                 "50d5d78581828b29": {
-                    "pb95": 2.045,
-                    "diesel": 2.345,
+                    "pb95": 1.995,
+                    "diesel": 2.295,
                     "lpg": 0.859
                 },
                 "b5edb2a647b46a1d": {
@@ -50157,14 +50157,18 @@
                     "diesel": 2.26,
                     "lpg": 0.82
                 },
+                "46184804e26a0df2": {
+                    "pb95": 1.91,
+                    "diesel": 2.22
+                },
                 "45aa3a26f22b4e70": {
                     "pb95": 1.999,
                     "diesel": 2.339,
                     "lpg": 0.899
                 },
                 "7ee81d780347f0b3": {
-                    "pb95": 2.04,
-                    "diesel": 2.34,
+                    "pb95": 2.05,
+                    "diesel": 2.35,
                     "lpg": 0.88
                 }
             }

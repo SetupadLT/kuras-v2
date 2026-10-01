@@ -5,15 +5,15 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-10-01",
-        "generated_at": "2026-10-01T07:48:41+00:00",
-        "checksum_sha256": "bf04f6e09d9aa6bbf82608b9fb34e94ca2d29ac325a2cefc98ed7da4da902cbe",
+        "generated_at": "2026-10-01T15:26:27+00:00",
+        "checksum_sha256": "c8faffab5f09eb26ac5ecb2d7be1ddd33873bc79f705cf94ac8360038e4eaa27",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-10-01T10:30:02+03:00"
+        "source_updated_at": "2026-10-01T16:25:59+03:00"
     },
     "summary": {
         "station_count": 766,
         "coordinate_count": 765,
-        "price_count": 2042,
+        "price_count": 2044,
         "fuels": [
             "pb95",
             "diesel",
@@ -1003,11 +1003,11 @@
             "longitude": 26.4632926,
             "prices": {
                 "pb95": 1.932,
-                "diesel": 2.232
+                "diesel": 2.218
             },
             "price_updated_at": {
-                "pb95": "2026-10-01T10:00:00+03:00",
-                "diesel": "2026-10-01T10:00:00+03:00"
+                "pb95": "2026-10-01T12:43:03+03:00",
+                "diesel": "2026-10-01T12:43:03+03:00"
             },
             "unavailable_fuels": []
         },
@@ -10744,13 +10744,13 @@
             "latitude": 55.97576248,
             "longitude": 22.26366425,
             "prices": {
-                "pb95": 2.045,
-                "diesel": 2.345,
+                "pb95": 1.995,
+                "diesel": 2.295,
                 "lpg": 0.859
             },
             "price_updated_at": {
-                "pb95": "2026-10-01T10:00:00+03:00",
-                "diesel": "2026-10-01T10:00:00+03:00",
+                "pb95": "2026-10-01T14:02:29+03:00",
+                "diesel": "2026-10-01T14:02:40+03:00",
                 "lpg": "2026-10-01T10:00:00+03:00"
             },
             "unavailable_fuels": []
@@ -15571,12 +15571,15 @@
             "municipality": "Klaipėdos r. sav.",
             "latitude": 55.71917037,
             "longitude": 21.29335463,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel"
-            ]
+            "prices": {
+                "pb95": 1.91,
+                "diesel": 2.22
+            },
+            "price_updated_at": {
+                "pb95": "2026-10-01T11:27:50+03:00",
+                "diesel": "2026-10-01T11:27:50+03:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "45aa3a26f22b4e70",
@@ -15609,14 +15612,14 @@
             "latitude": 55.07211501,
             "longitude": 24.29494647,
             "prices": {
-                "pb95": 2.04,
-                "diesel": 2.34,
+                "pb95": 2.05,
+                "diesel": 2.35,
                 "lpg": 0.88
             },
             "price_updated_at": {
-                "pb95": "2026-10-01T10:00:00+03:00",
-                "diesel": "2026-10-01T10:00:00+03:00",
-                "lpg": "2026-10-01T10:00:00+03:00"
+                "pb95": "2026-10-01T16:25:59+03:00",
+                "diesel": "2026-10-01T16:25:59+03:00",
+                "lpg": "2026-10-01T16:25:59+03:00"
             },
             "unavailable_fuels": []
         }
