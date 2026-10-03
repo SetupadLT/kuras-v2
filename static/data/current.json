@@ -5,10 +5,10 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-10-03",
-        "generated_at": "2026-10-03T10:39:54+00:00",
-        "checksum_sha256": "e74706d5ae35bc57f7e3e72990e3b6805533146e9c139bdc689c6a764b531a9b",
+        "generated_at": "2026-10-03T14:55:20+00:00",
+        "checksum_sha256": "daa5e7fe3e7d5530b17d64d60d1cd4d1abd0a2e4056f7fcec3f0078e71ccb4b9",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-10-03T10:30:05+03:00"
+        "source_updated_at": "2026-10-03T17:53:32+03:00"
     },
     "summary": {
         "station_count": 766,
@@ -2428,14 +2428,14 @@
             "latitude": 55.24072789,
             "longitude": 24.78759909,
             "prices": {
-                "pb95": 1.99,
-                "diesel": 2.29,
+                "pb95": 1.89,
+                "diesel": 2.19,
                 "lpg": 0.83
             },
             "price_updated_at": {
-                "pb95": "2026-10-03T10:00:00+03:00",
-                "diesel": "2026-10-03T10:00:00+03:00",
-                "lpg": "2026-10-03T10:00:00+03:00"
+                "pb95": "2026-10-03T17:53:32+03:00",
+                "diesel": "2026-10-03T17:53:32+03:00",
+                "lpg": "2026-10-03T17:53:32+03:00"
             },
             "unavailable_fuels": []
         },
