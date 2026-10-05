@@ -5,15 +5,15 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-10-05",
-        "generated_at": "2026-10-05T09:01:53+00:00",
-        "checksum_sha256": "e7c9c62d2a36ec815359a954150e3c9a047342f71840306704fc31122cebb784",
+        "generated_at": "2026-10-05T18:26:14+00:00",
+        "checksum_sha256": "bc6abc731747faad4703f2e8f218d5dcfa94991791a5c93366771d4a5410045c",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-10-05T11:52:52+03:00"
+        "source_updated_at": "2026-10-05T20:43:29+03:00"
     },
     "summary": {
         "station_count": 766,
         "coordinate_count": 765,
-        "price_count": 2043,
+        "price_count": 2054,
         "fuels": [
             "pb95",
             "diesel",
@@ -977,14 +977,14 @@
             "latitude": 56.01488869,
             "longitude": 22.95124646,
             "prices": {
-                "pb95": 1.95,
-                "diesel": 2.25,
+                "pb95": 1.89,
+                "diesel": 2.19,
                 "lpg": 0.79
             },
             "price_updated_at": {
-                "pb95": "2026-10-05T10:00:00+03:00",
-                "diesel": "2026-10-05T10:00:00+03:00",
-                "lpg": "2026-10-05T10:00:00+03:00"
+                "pb95": "2026-10-05T20:43:29+03:00",
+                "diesel": "2026-10-05T20:43:29+03:00",
+                "lpg": "2026-10-05T20:43:29+03:00"
             },
             "unavailable_fuels": []
         },
@@ -5113,13 +5113,17 @@
             "municipality": "Anykščių r. sav.",
             "latitude": 55.5225227,
             "longitude": 25.08828077,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel",
-                "lpg"
-            ]
+            "prices": {
+                "pb95": 1.839,
+                "diesel": 2.199,
+                "lpg": 0.799
+            },
+            "price_updated_at": {
+                "pb95": "2026-10-05T15:44:24+03:00",
+                "diesel": "2026-10-05T15:44:24+03:00",
+                "lpg": "2026-10-05T15:44:24+03:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "384970cc46e19a49",
@@ -5130,13 +5134,17 @@
             "municipality": "Rokiškio r. sav.",
             "latitude": 55.94673213,
             "longitude": 25.59081483,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel",
-                "lpg"
-            ]
+            "prices": {
+                "pb95": 1.989,
+                "diesel": 2.283,
+                "lpg": 0.839
+            },
+            "price_updated_at": {
+                "pb95": "2026-10-05T15:44:24+03:00",
+                "diesel": "2026-10-05T15:44:24+03:00",
+                "lpg": "2026-10-05T15:44:24+03:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "0c664f85dfd9a9b2",
@@ -5147,13 +5155,17 @@
             "municipality": "Elektrėnų sav.",
             "latitude": 54.77508393,
             "longitude": 24.81039813,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel",
-                "lpg"
-            ]
+            "prices": {
+                "pb95": 2.049,
+                "diesel": 2.349,
+                "lpg": 0.959
+            },
+            "price_updated_at": {
+                "pb95": "2026-10-05T15:44:24+03:00",
+                "diesel": "2026-10-05T15:44:24+03:00",
+                "lpg": "2026-10-05T15:44:24+03:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "7e8199f044aa0edb",
@@ -10701,7 +10713,7 @@
                 "lpg": 0.829
             },
             "price_updated_at": {
-                "lpg": "2026-10-05T10:00:00+03:00"
+                "lpg": "2026-10-05T13:10:36+03:00"
             },
             "unavailable_fuels": []
         },
@@ -10736,13 +10748,13 @@
             "latitude": 55.97576248,
             "longitude": 22.26366425,
             "prices": {
-                "pb95": 1.985,
-                "diesel": 2.285,
+                "pb95": 2.015,
+                "diesel": 2.315,
                 "lpg": 0.859
             },
             "price_updated_at": {
-                "pb95": "2026-10-05T10:00:00+03:00",
-                "diesel": "2026-10-05T10:00:00+03:00",
+                "pb95": "2026-10-05T13:29:05+03:00",
+                "diesel": "2026-10-05T13:29:17+03:00",
                 "lpg": "2026-10-05T10:00:00+03:00"
             },
             "unavailable_fuels": []
@@ -15571,12 +15583,15 @@
             "municipality": "Klaipėdos r. sav.",
             "latitude": 55.71917037,
             "longitude": 21.29335463,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel"
-            ]
+            "prices": {
+                "pb95": 1.88,
+                "diesel": 2.2
+            },
+            "price_updated_at": {
+                "pb95": "2026-10-05T13:06:46+03:00",
+                "diesel": "2026-10-05T13:06:46+03:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "45aa3a26f22b4e70",

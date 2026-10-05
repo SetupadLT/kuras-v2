@@ -54889,9 +54889,9 @@
             "fuels": {
                 "pb95": {
                     "minimum": 1.815,
-                    "average": 1.9339034482758541,
+                    "average": 1.9338916323731061,
                     "maximum": 2.05,
-                    "station_count": 725,
+                    "station_count": 729,
                     "winner": {
                         "id": "150be363452aac87",
                         "brand": "Alauša",
@@ -54902,9 +54902,9 @@
                 },
                 "diesel": {
                     "minimum": 2.139,
-                    "average": 2.2392173314993133,
+                    "average": 2.239277701778387,
                     "maximum": 2.35,
-                    "station_count": 727,
+                    "station_count": 731,
                     "winner": {
                         "id": "7a26ac48b6290710",
                         "brand": "Alauša",
@@ -54915,9 +54915,9 @@
                 },
                 "lpg": {
                     "minimum": 0.74,
-                    "average": 0.8354619289340108,
+                    "average": 0.8356144781144788,
                     "maximum": 0.979,
-                    "station_count": 591,
+                    "station_count": 594,
                     "winner": {
                         "id": "6db7d5a872538056",
                         "brand": "Madalva",
@@ -55146,8 +55146,8 @@
                     "lpg": 0.849
                 },
                 "f2ab66ade50690a9": {
-                    "pb95": 1.95,
-                    "diesel": 2.25,
+                    "pb95": 1.89,
+                    "diesel": 2.19,
                     "lpg": 0.79
                 },
                 "3ce20acb70578cf9": {
@@ -56104,6 +56104,21 @@
                 },
                 "e07e7105af6a9622": {
                     "lpg": 0.899
+                },
+                "80e2f7e3ba10c9c5": {
+                    "pb95": 1.839,
+                    "diesel": 2.199,
+                    "lpg": 0.799
+                },
+                "384970cc46e19a49": {
+                    "pb95": 1.989,
+                    "diesel": 2.283,
+                    "lpg": 0.839
+                },
+                "0c664f85dfd9a9b2": {
+                    "pb95": 2.049,
+                    "diesel": 2.349,
+                    "lpg": 0.959
                 },
                 "7e8199f044aa0edb": {
                     "lpg": 0.8
@@ -57338,8 +57353,8 @@
                     "lpg": 0.885
                 },
                 "50d5d78581828b29": {
-                    "pb95": 1.985,
-                    "diesel": 2.285,
+                    "pb95": 2.015,
+                    "diesel": 2.315,
                     "lpg": 0.859
                 },
                 "b5edb2a647b46a1d": {
@@ -58464,6 +58479,10 @@
                     "pb95": 1.86,
                     "diesel": 2.18,
                     "lpg": 0.82
+                },
+                "46184804e26a0df2": {
+                    "pb95": 1.88,
+                    "diesel": 2.2
                 },
                 "45aa3a26f22b4e70": {
                     "pb95": 1.999,
