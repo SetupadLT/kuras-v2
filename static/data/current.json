@@ -5,15 +5,15 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-10-10",
-        "generated_at": "2026-10-10T09:04:46+00:00",
-        "checksum_sha256": "c5a6ecb4a17266135b8730eeaafe5742c1995010204a0eec16ae0c1fbe2138cc",
+        "generated_at": "2026-10-10T19:31:28+00:00",
+        "checksum_sha256": "a3735c3db5ae53d9391bf19b1bdec29c1c0443006eab8d4b6882c153d3d265c1",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-10-10T10:30:06+03:00"
+        "source_updated_at": "2026-10-10T21:22:17+03:00"
     },
     "summary": {
         "station_count": 765,
         "coordinate_count": 764,
-        "price_count": 281,
+        "price_count": 284,
         "fuels": [
             "pb95",
             "diesel",
@@ -3656,13 +3656,17 @@
             "municipality": "Plungės r. sav.",
             "latitude": 55.93901908,
             "longitude": 21.88009127,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel",
-                "lpg"
-            ]
+            "prices": {
+                "pb95": 1.996,
+                "diesel": 2.266,
+                "lpg": 0.896
+            },
+            "price_updated_at": {
+                "pb95": "2026-10-10T21:22:17+03:00",
+                "diesel": "2026-10-10T21:22:17+03:00",
+                "lpg": "2026-10-10T21:22:17+03:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "ab5de4cabfd6d378",

@@ -72948,9 +72948,9 @@
             "fuels": {
                 "pb95": {
                     "minimum": 1.819,
-                    "average": 1.8972688172043004,
-                    "maximum": 1.99,
-                    "station_count": 93,
+                    "average": 1.8983191489361697,
+                    "maximum": 1.996,
+                    "station_count": 94,
                     "winner": {
                         "id": "6badf2721ea32047",
                         "brand": "Velseka",
@@ -72961,9 +72961,9 @@
                 },
                 "diesel": {
                     "minimum": 2.099,
-                    "average": 2.1887872340425547,
+                    "average": 2.1896000000000013,
                     "maximum": 2.3,
-                    "station_count": 94,
+                    "station_count": 95,
                     "winner": {
                         "id": "d876b18296771d18",
                         "brand": "Bonsa",
@@ -72974,9 +72974,9 @@
                 },
                 "lpg": {
                     "minimum": 0.69,
-                    "average": 0.825893617021277,
+                    "average": 0.8266315789473687,
                     "maximum": 0.94,
-                    "station_count": 94,
+                    "station_count": 95,
                     "winner": {
                         "id": "c6810d7e052af6e7",
                         "brand": "IĮ Raimondo Balsio",
@@ -73016,6 +73016,11 @@
                     "pb95": 1.91,
                     "diesel": 2.16,
                     "lpg": 0.81
+                },
+                "3d168a4c0cc38926": {
+                    "pb95": 1.996,
+                    "diesel": 2.266,
+                    "lpg": 0.896
                 },
                 "d93cfe52ce86bef6": {
                     "lpg": 0.84
