@@ -145,9 +145,8 @@ jobs:
           fetch-depth: 0
       - name: Publish only browser-facing files
         run: |
-          rsync -a --delete --exclude='.git/' dist/ published/
+          rsync -a --delete --exclude='.git/' --exclude='CNAME' dist/ published/
           touch published/.nojekyll
-          printf '%s\n' 'kuraspricer.stpd.io' > published/CNAME
           git -C published config user.name 'kuras-data-bot'
           git -C published config user.email 'kuras-data-bot@users.noreply.github.com'
           git -C published add -A
