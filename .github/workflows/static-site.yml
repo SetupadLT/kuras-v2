@@ -41,7 +41,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages
+  group: public-site
   cancel-in-progress: false
 
 jobs:
@@ -75,9 +75,12 @@ jobs:
         run: |
           mkdir -p dist/data
           php -r '$status = ["checked_at" => (new DateTimeImmutable("now", new DateTimeZone("UTC")))->format(DateTimeInterface::ATOM)]; file_put_contents("dist/data/status.json", json_encode($status, JSON_UNESCAPED_SLASHES) . PHP_EOL);'
-      - uses: actions/upload-pages-artifact@v3
+      - name: Package the public site
+        uses: actions/upload-artifact@v4
         with:
+          name: public-site
           path: dist
+          retention-days: 1
       - uses: actions/upload-artifact@v4
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_data)
         with:
@@ -127,13 +130,26 @@ jobs:
     if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy GitHub Pages preview
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download the validated public site
+        uses: actions/download-artifact@v4
+        with:
+          name: public-site
+          path: dist
+      - name: Check out the public Pages repository
+        uses: actions/checkout@v4
+        with:
+          repository: SetupadLT/kuras-v2-site
+          token: ${{ secrets.PAGES_REPO_TOKEN }}
+          path: published
+          fetch-depth: 0
+      - name: Publish only browser-facing files
+        run: |
+          rsync -a --delete --exclude='.git/' dist/ published/
+          touch published/.nojekyll
+          printf '%s\n' 'kuraspricer.stpd.io' > published/CNAME
+          git -C published config user.name 'kuras-data-bot'
+          git -C published config user.email 'kuras-data-bot@users.noreply.github.com'
+          git -C published add -A
+          git -C published diff --cached --quiet || git -C published commit -m "Publish validated site from ${GITHUB_SHA}"
+          git -C published push

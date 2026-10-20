@@ -7,11 +7,15 @@ Fuel price comparison platform for Lithuania. Aggregates daily data from the [Li
 - **Static HTML/CSS/JavaScript** — filters, rankings, table and Leaflet map
 - **Generated JSON** — the browser needs no PHP, MySQL or WordPress plugin
 - **GitHub Actions** — checks, validates and publishes LEA data every hour, every day
-- **GitHub Pages** — temporary review hosting before the production static host is selected
+- **Private source repository** — import, validation and application source stay private
+- **Public Pages repository** — only generated browser-facing files are published to
+  [`SetupadLT/kuras-v2-site`](https://github.com/SetupadLT/kuras-v2-site)
 
 The source application is in `static/`. `bin/build-static.php` discovers the
 official LEA live API, reuses the tested parser, blocks suspicious batches and
 produces `dist/`. A failed job does not replace the last successful deployment.
+The deployment job requires a fine-grained `PAGES_REPO_TOKEN` Actions secret
+with `Contents: Read and write` access limited to `SetupadLT/kuras-v2-site`.
 
 ## Static preview
 
