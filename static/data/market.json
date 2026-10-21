@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "generated_at": "2026-10-21T16:07:48+00:00",
+    "generated_at": "2026-10-21T20:08:58+00:00",
     "orlen": {
         "source_name": "ORLEN Lietuva",
         "source_url": "https://www.orlenlietuva.lt/en/wholesale/_layouts/f2hCharts/default_lt_M.aspx",
@@ -195,22 +195,6 @@
         "description": "Europe Brent Spot Price FOB.",
         "unit": "USD/bbl",
         "series": [
-            {
-                "date": "2026-06-10",
-                "value": 95.73
-            },
-            {
-                "date": "2026-06-11",
-                "value": 92.84
-            },
-            {
-                "date": "2026-06-12",
-                "value": 88.64
-            },
-            {
-                "date": "2026-06-15",
-                "value": 84.36
-            },
             {
                 "date": "2026-06-16",
                 "value": 80.5
@@ -554,6 +538,22 @@
             {
                 "date": "2026-10-14",
                 "value": 126.55
+            },
+            {
+                "date": "2026-10-15",
+                "value": 126.35
+            },
+            {
+                "date": "2026-10-16",
+                "value": 119.33
+            },
+            {
+                "date": "2026-10-19",
+                "value": 118.82
+            },
+            {
+                "date": "2026-10-20",
+                "value": 115.22
             }
         ]
     }
