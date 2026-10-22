@@ -5,10 +5,10 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-10-22",
-        "generated_at": "2026-10-22T07:33:07+00:00",
-        "checksum_sha256": "0d622615ba36f76de09045d948b634101ed4f5f61f92d3281a6529d99f7cb101",
+        "generated_at": "2026-10-22T13:12:11+00:00",
+        "checksum_sha256": "cf6f84eabd833fa589b459a05ad11b984d3b0031ed4e8bdb33e22ba1ebb19a13",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-10-22T10:30:03+03:00"
+        "source_updated_at": "2026-10-22T13:24:48+03:00"
     },
     "summary": {
         "station_count": 766,
@@ -899,12 +899,12 @@
             "latitude": 55.59049932,
             "longitude": 26.4632926,
             "prices": {
-                "pb95": 1.954,
-                "diesel": 2.231
+                "pb95": 1.91,
+                "diesel": 2.221
             },
             "price_updated_at": {
-                "pb95": "2026-10-22T10:00:00+03:00",
-                "diesel": "2026-10-22T10:00:00+03:00"
+                "pb95": "2026-10-22T11:02:47+03:00",
+                "diesel": "2026-10-22T11:02:47+03:00"
             },
             "unavailable_fuels": []
         },
@@ -3929,14 +3929,14 @@
             "unavailable_fuels": []
         },
         {
-            "id": "632d0085e7f3939c",
+            "id": "4593c5693f8f69f2",
             "name": "Circle K",
             "brand": "Circle K",
             "address": "Kėdainiai, J.Basanavičiaus g. 103, 57350",
             "city": "Kėdainiai",
             "municipality": "Kėdainių r. sav.",
-            "latitude": 55.29744038,
-            "longitude": 24.00122406,
+            "latitude": 55.2745171,
+            "longitude": 23.94451998,
             "prices": {
                 "pb95": 1.919,
                 "diesel": 2.219,
@@ -12154,12 +12154,12 @@
             "latitude": 54.16015419,
             "longitude": 25.00989858,
             "prices": {
-                "pb95": 2.049,
-                "diesel": 2.329
+                "pb95": 2.039,
+                "diesel": 2.309
             },
             "price_updated_at": {
-                "pb95": "2026-10-22T10:00:00+03:00",
-                "diesel": "2026-10-22T10:00:00+03:00"
+                "pb95": "2026-10-22T13:24:48+03:00",
+                "diesel": "2026-10-22T13:24:48+03:00"
             },
             "unavailable_fuels": []
         },
@@ -12173,12 +12173,12 @@
             "latitude": 54.30592204,
             "longitude": 25.36089318,
             "prices": {
-                "pb95": 2.039,
-                "diesel": 2.319
+                "pb95": 2.029,
+                "diesel": 2.299
             },
             "price_updated_at": {
-                "pb95": "2026-10-22T10:00:00+03:00",
-                "diesel": "2026-10-22T10:00:00+03:00"
+                "pb95": "2026-10-22T13:24:27+03:00",
+                "diesel": "2026-10-22T13:24:27+03:00"
             },
             "unavailable_fuels": []
         },
@@ -12226,12 +12226,12 @@
             "latitude": null,
             "longitude": null,
             "prices": {
-                "pb95": 1.95,
-                "diesel": 2.22
+                "pb95": 1.92,
+                "diesel": 2.19
             },
             "price_updated_at": {
-                "pb95": "2026-10-22T10:00:00+03:00",
-                "diesel": "2026-10-22T10:00:00+03:00"
+                "pb95": "2026-10-22T11:03:14+03:00",
+                "diesel": "2026-10-22T11:03:14+03:00"
             },
             "unavailable_fuels": []
         },
@@ -15518,14 +15518,14 @@
             "latitude": 55.82748974,
             "longitude": 24.98569522,
             "prices": {
-                "pb95": 1.849,
+                "pb95": 1.919,
                 "diesel": 2.189,
-                "lpg": 0.899
+                "lpg": 0.889
             },
             "price_updated_at": {
-                "pb95": "2026-10-22T10:00:00+03:00",
-                "diesel": "2026-10-22T10:00:00+03:00",
-                "lpg": "2026-10-22T10:00:00+03:00"
+                "pb95": "2026-10-22T12:07:44+03:00",
+                "diesel": "2026-10-22T12:07:44+03:00",
+                "lpg": "2026-10-22T12:07:44+03:00"
             },
             "unavailable_fuels": []
         },

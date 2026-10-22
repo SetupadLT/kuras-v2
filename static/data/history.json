@@ -4656,6 +4656,12 @@
             "address": "Smėlinkos vs. 1, 33171",
             "city": "Smėlinkos vs. 1",
             "municipality": "Molėtų r. sav."
+        },
+        "4593c5693f8f69f2": {
+            "brand": "Circle K",
+            "address": "Kėdainiai, J.Basanavičiaus g. 103, 57350",
+            "city": "Kėdainiai",
+            "municipality": "Kėdainių r. sav."
         }
     },
     "days": [
@@ -103708,7 +103714,7 @@
             "fuels": {
                 "pb95": {
                     "minimum": 1.839,
-                    "average": 1.9378703956343737,
+                    "average": 1.9378376534788484,
                     "maximum": 2.06,
                     "station_count": 733,
                     "winner": {
@@ -103721,7 +103727,7 @@
                 },
                 "diesel": {
                     "minimum": 2.109,
-                    "average": 2.2265863945578217,
+                    "average": 2.2264775510204067,
                     "maximum": 2.359,
                     "station_count": 735,
                     "winner": {
@@ -103734,7 +103740,7 @@
                 },
                 "lpg": {
                     "minimum": 0.8,
-                    "average": 0.9312625418060242,
+                    "average": 0.9312458193979974,
                     "maximum": 1,
                     "station_count": 598,
                     "winner": {
@@ -103951,8 +103957,8 @@
                     "lpg": 0.89
                 },
                 "3ce20acb70578cf9": {
-                    "pb95": 1.954,
-                    "diesel": 2.231
+                    "pb95": 1.91,
+                    "diesel": 2.221
                 },
                 "6e4c6d9bbfaa9412": {
                     "pb95": 1.859,
@@ -104661,7 +104667,7 @@
                     "pb95": 1.919,
                     "diesel": 2.219
                 },
-                "632d0085e7f3939c": {
+                "4593c5693f8f69f2": {
                     "pb95": 1.919,
                     "diesel": 2.219,
                     "lpg": 0.959
@@ -106504,12 +106510,12 @@
                     "lpg": 0.91
                 },
                 "15143130448f1a72": {
-                    "pb95": 2.049,
-                    "diesel": 2.329
+                    "pb95": 2.039,
+                    "diesel": 2.309
                 },
                 "5415fc669cdfb5f7": {
-                    "pb95": 2.039,
-                    "diesel": 2.319
+                    "pb95": 2.029,
+                    "diesel": 2.299
                 },
                 "c022a756d3058d9f": {
                     "lpg": 0.88
@@ -106518,8 +106524,8 @@
                     "lpg": 0.81
                 },
                 "41ea0febc220ff56": {
-                    "pb95": 1.95,
-                    "diesel": 2.22
+                    "pb95": 1.92,
+                    "diesel": 2.19
                 },
                 "91d885a12b28824d": {
                     "pb95": 2.06,
@@ -107292,9 +107298,9 @@
                     "lpg": 0.934
                 },
                 "6badf2721ea32047": {
-                    "pb95": 1.849,
+                    "pb95": 1.919,
                     "diesel": 2.189,
-                    "lpg": 0.899
+                    "lpg": 0.889
                 },
                 "14f8690613b2b334": {
                     "pb95": 1.949,
