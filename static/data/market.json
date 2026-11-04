@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "generated_at": "2026-11-04T00:54:09+00:00",
+    "generated_at": "2026-11-04T07:29:10+00:00",
     "orlen": {
         "source_name": "ORLEN Lietuva",
         "source_url": "https://www.orlenlietuva.lt/en/wholesale/_layouts/f2hCharts/default_lt_M.aspx",
@@ -8,10 +8,6 @@
         "unit": "EUR/l",
         "series": {
             "pb95": [
-                {
-                    "date": "2026-10-01",
-                    "value": 1.763
-                },
                 {
                     "date": "2026-10-02",
                     "value": 1.784
@@ -95,13 +91,13 @@
                 {
                     "date": "2026-10-30",
                     "value": 1.673
+                },
+                {
+                    "date": "2026-11-03",
+                    "value": 1.615
                 }
             ],
             "diesel": [
-                {
-                    "date": "2026-10-01",
-                    "value": 2.105
-                },
                 {
                     "date": "2026-10-02",
                     "value": 2.094
@@ -185,6 +181,10 @@
                 {
                     "date": "2026-10-30",
                     "value": 2.115
+                },
+                {
+                    "date": "2026-11-03",
+                    "value": 2.081
                 }
             ]
         }
