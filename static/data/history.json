@@ -145663,7 +145663,7 @@
             "fuels": {
                 "pb95": {
                     "minimum": 1.739,
-                    "average": 1.851983870967742,
+                    "average": 1.8515000000000001,
                     "maximum": 1.98,
                     "station_count": 62,
                     "winner": {
@@ -145676,7 +145676,7 @@
                 },
                 "diesel": {
                     "minimum": 2.149,
-                    "average": 2.2272258064516137,
+                    "average": 2.226741935483872,
                     "maximum": 2.33,
                     "station_count": 62,
                     "winner": {
@@ -145689,7 +145689,7 @@
                 },
                 "lpg": {
                     "minimum": 0.89,
-                    "average": 0.9844687500000008,
+                    "average": 0.9845156250000008,
                     "maximum": 1.05,
                     "station_count": 64,
                     "winner": {
@@ -145833,9 +145833,9 @@
                     "lpg": 0.997
                 },
                 "50d5d78581828b29": {
-                    "pb95": 1.905,
-                    "diesel": 2.305,
-                    "lpg": 0.999
+                    "pb95": 1.875,
+                    "diesel": 2.275,
+                    "lpg": 1.002
                 },
                 "942cb6f6cd73d68b": {
                     "pb95": 1.87,
