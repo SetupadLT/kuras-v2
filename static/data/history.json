@@ -146423,9 +146423,9 @@
             "fuels": {
                 "pb95": {
                     "minimum": 1.689,
-                    "average": 1.8390504774897727,
+                    "average": 1.8389836512261626,
                     "maximum": 2.039,
-                    "station_count": 733,
+                    "station_count": 734,
                     "winner": {
                         "id": "3ad4281da360b6d2",
                         "brand": "Baltic Petroleum",
@@ -146436,9 +146436,9 @@
                 },
                 "diesel": {
                     "minimum": 2.119,
-                    "average": 2.225717006802716,
+                    "average": 2.225654891304343,
                     "maximum": 2.359,
-                    "station_count": 735,
+                    "station_count": 736,
                     "winner": {
                         "id": "3ad4281da360b6d2",
                         "brand": "Baltic Petroleum",
@@ -150023,6 +150023,10 @@
                     "pb95": 1.81,
                     "diesel": 2.19,
                     "lpg": 0.99
+                },
+                "46184804e26a0df2": {
+                    "pb95": 1.79,
+                    "diesel": 2.18
                 },
                 "45aa3a26f22b4e70": {
                     "pb95": 1.939,

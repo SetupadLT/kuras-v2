@@ -5,15 +5,15 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-11-09",
-        "generated_at": "2026-11-09T09:46:13+00:00",
-        "checksum_sha256": "e26549582f0537643b9e9afc1a7174b85105ec8185a407d54d86abd9739c9a19",
+        "generated_at": "2026-11-09T20:10:06+00:00",
+        "checksum_sha256": "943ba4fda208f6c7f8973b7856227c1123f37b3befcfdfa4adc06cd1be6ef70e",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-11-09T11:42:20+02:00"
+        "source_updated_at": "2026-11-09T18:53:19+02:00"
     },
     "summary": {
         "station_count": 767,
         "coordinate_count": 767,
-        "price_count": 2064,
+        "price_count": 2066,
         "fuels": [
             "pb95",
             "diesel",
@@ -10633,7 +10633,7 @@
                 "lpg": 0.919
             },
             "price_updated_at": {
-                "lpg": "2026-11-09T10:00:00+02:00"
+                "lpg": "2026-11-09T12:01:54+02:00"
             },
             "unavailable_fuels": []
         },
@@ -12539,9 +12539,9 @@
                 "lpg": 0.94
             },
             "price_updated_at": {
-                "pb95": "2026-11-09T10:00:00+02:00",
-                "diesel": "2026-11-09T10:00:00+02:00",
-                "lpg": "2026-11-09T10:00:00+02:00"
+                "pb95": "2026-11-09T18:53:18+02:00",
+                "diesel": "2026-11-09T18:53:19+02:00",
+                "lpg": "2026-11-09T18:53:19+02:00"
             },
             "unavailable_fuels": []
         },
@@ -15617,12 +15617,15 @@
             "municipality": "Klaipėdos r. sav.",
             "latitude": 55.71917037,
             "longitude": 21.29335463,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "pb95",
-                "diesel"
-            ]
+            "prices": {
+                "pb95": 1.79,
+                "diesel": 2.18
+            },
+            "price_updated_at": {
+                "pb95": "2026-11-09T11:50:19+02:00",
+                "diesel": "2026-11-09T11:50:19+02:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "45aa3a26f22b4e70",
