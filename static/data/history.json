@@ -164573,9 +164573,9 @@
                 },
                 "lpg": {
                     "minimum": 0.94,
-                    "average": 1.0358771929824555,
+                    "average": 1.0343833333333328,
                     "maximum": 1.096,
-                    "station_count": 57,
+                    "station_count": 60,
                     "winner": {
                         "id": "348b06050ca5b284",
                         "brand": "Tumasa",
@@ -164615,6 +164615,15 @@
                     "pb95": 1.72,
                     "diesel": 2.12,
                     "lpg": 0.98
+                },
+                "d93cfe52ce86bef6": {
+                    "lpg": 0.99
+                },
+                "1b00638e38f771e0": {
+                    "lpg": 0.998
+                },
+                "dd2a9d9ba6cff665": {
+                    "lpg": 1.03
                 },
                 "facae8f68216b165": {
                     "pb95": 1.899,

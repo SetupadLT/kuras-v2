@@ -5,15 +5,15 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-11-15",
-        "generated_at": "2026-11-15T09:55:29+00:00",
-        "checksum_sha256": "adcc026d11b54d0465cf276c47d348ac4f268377a08a227fb0a76ab844e4534f",
+        "generated_at": "2026-11-15T21:47:21+00:00",
+        "checksum_sha256": "654b7185bd5b461f3804c7f4cc5d2db8138525a440b31de9fd2c63a83d0a433e",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-11-15T10:30:07+02:00"
+        "source_updated_at": "2026-11-15T20:45:29+02:00"
     },
     "summary": {
         "station_count": 761,
         "coordinate_count": 761,
-        "price_count": 178,
+        "price_count": 181,
         "fuels": [
             "pb95",
             "diesel",
@@ -4255,11 +4255,13 @@
             "municipality": "Kauno m. sav.",
             "latitude": 54.93161139,
             "longitude": 23.95134209,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "lpg"
-            ]
+            "prices": {
+                "lpg": 0.99
+            },
+            "price_updated_at": {
+                "lpg": "2026-11-15T20:43:50+02:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "1b00638e38f771e0",
@@ -4270,11 +4272,13 @@
             "municipality": "Kauno m. sav.",
             "latitude": 54.91332994,
             "longitude": 23.91165299,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "lpg"
-            ]
+            "prices": {
+                "lpg": 0.998
+            },
+            "price_updated_at": {
+                "lpg": "2026-11-15T20:44:26+02:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "dd2a9d9ba6cff665",
@@ -4285,11 +4289,13 @@
             "municipality": "Kėdainių r. sav.",
             "latitude": 55.27806842,
             "longitude": 23.96011207,
-            "prices": [],
-            "price_updated_at": [],
-            "unavailable_fuels": [
-                "lpg"
-            ]
+            "prices": {
+                "lpg": 1.03
+            },
+            "price_updated_at": {
+                "lpg": "2026-11-15T20:45:29+02:00"
+            },
+            "unavailable_fuels": []
         },
         {
             "id": "96512dc3ef9bb225",
