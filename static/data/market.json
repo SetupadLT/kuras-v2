@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "generated_at": "2026-11-17T03:02:48+00:00",
+    "generated_at": "2026-11-17T11:52:14+00:00",
     "orlen": {
         "source_name": "ORLEN Lietuva",
         "source_url": "https://www.orlenlietuva.lt/en/wholesale/_layouts/f2hCharts/default_lt_M.aspx",
@@ -8,10 +8,6 @@
         "unit": "EUR/l",
         "series": {
             "pb95": [
-                {
-                    "date": "2026-10-14",
-                    "value": 1.803
-                },
                 {
                     "date": "2026-10-15",
                     "value": 1.776
@@ -95,13 +91,13 @@
                 {
                     "date": "2026-11-13",
                     "value": 1.54
+                },
+                {
+                    "date": "2026-11-16",
+                    "value": 1.545
                 }
             ],
             "diesel": [
-                {
-                    "date": "2026-10-14",
-                    "value": 2.125
-                },
                 {
                     "date": "2026-10-15",
                     "value": 2.122
@@ -185,6 +181,10 @@
                 {
                     "date": "2026-11-13",
                     "value": 1.996
+                },
+                {
+                    "date": "2026-11-16",
+                    "value": 2.022
                 }
             ]
         }
@@ -556,8 +556,5 @@
                 "value": 92.14
             }
         ]
-    },
-    "warnings": [
-        "ORLEN: Šaltinis nepasiekiamas: Operation timed out after 90002 milliseconds with 0 bytes received"
-    ]
+    }
 }
