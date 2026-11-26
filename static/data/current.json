@@ -5,10 +5,10 @@
         "name": "Lietuvos energetikos agentūra (LEA)",
         "page_url": "https://degalukainos.ena.lt/",
         "source_date": "2026-11-26",
-        "generated_at": "2026-11-26T12:28:18+00:00",
-        "checksum_sha256": "d6a67a33db747909fa01ef5b6436b834420a703e4fcd087741cd34e05ded7421",
+        "generated_at": "2026-11-26T21:57:59+00:00",
+        "checksum_sha256": "4be1becbfd85319504494fe22c32eff7b1ad7e656cb12777c823bc6796c3944b",
         "parser_version": "lea-live-api-v1",
-        "source_updated_at": "2026-11-26T11:25:39+02:00"
+        "source_updated_at": "2026-11-26T15:11:14+02:00"
     },
     "summary": {
         "station_count": 761,
@@ -7653,7 +7653,7 @@
                 "lpg": 0.97
             },
             "price_updated_at": {
-                "lpg": "2026-11-26T10:00:00+02:00"
+                "lpg": "2026-11-26T15:11:14+02:00"
             },
             "unavailable_fuels": []
         },
@@ -7670,7 +7670,7 @@
                 "lpg": 0.97
             },
             "price_updated_at": {
-                "lpg": "2026-11-26T10:00:00+02:00"
+                "lpg": "2026-11-26T15:11:14+02:00"
             },
             "unavailable_fuels": []
         },
@@ -7687,7 +7687,7 @@
                 "lpg": 0.97
             },
             "price_updated_at": {
-                "lpg": "2026-11-26T10:00:00+02:00"
+                "lpg": "2026-11-26T15:11:14+02:00"
             },
             "unavailable_fuels": []
         },
@@ -7704,7 +7704,7 @@
                 "lpg": 0.97
             },
             "price_updated_at": {
-                "lpg": "2026-11-26T10:00:00+02:00"
+                "lpg": "2026-11-26T15:11:14+02:00"
             },
             "unavailable_fuels": []
         },
@@ -7718,14 +7718,14 @@
             "latitude": 55.3039813,
             "longitude": 22.04142297,
             "prices": {
-                "pb95": 1.72,
-                "diesel": 2.12,
+                "pb95": 1.65,
+                "diesel": 2.07,
                 "lpg": 0.94
             },
             "price_updated_at": {
-                "pb95": "2026-11-26T10:00:00+02:00",
-                "diesel": "2026-11-26T10:00:00+02:00",
-                "lpg": "2026-11-26T10:00:00+02:00"
+                "pb95": "2026-11-26T15:11:14+02:00",
+                "diesel": "2026-11-26T15:11:14+02:00",
+                "lpg": "2026-11-26T15:11:14+02:00"
             },
             "unavailable_fuels": []
         },
